@@ -1,0 +1,1437 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "API Documentation",
+    "description": "Layanan REST API Gratis dengan Dokumentasi Lengkap untuk Mempermudah Developer\nThanks To:\n-Muhammad Fikri Fahrezi\n-ExodusAI"
+  },
+  "host": "name-helped.gl.at.ply.gg:64716",
+  "basePath": "/",
+  "schemes": ["http"],
+  "paths": {
+    "/get/openai": {
+      "get": {
+        "tags": ["AI"],
+        "summary": "Send GET request to OpenAI Endpoint",
+        "description": "This sends a GET request to the OpenAI endpoint.",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "text",
+            "required": true,
+            "type": "string",
+            "description": "The input prompt to send to OpenAI."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "creator": { "type": "string" },
+                "prompt": { "type": "string" },
+                "result": { "type": "string" }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Missing 'text' query parameter.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string" }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string" },
+                "message": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/gemini": {
+      "get": {
+        "tags": ["AI"],
+        "summary": "Send GET request to Gemini Endpoint",
+        "description": "This sends a GET request to the Gemini endpoint.",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "text",
+            "required": true,
+            "type": "string",
+            "description": "The input prompt to send to Gemini."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "creator": { "type": "string" },
+                "prompt": { "type": "string" },
+                "result": { "type": "string" }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Missing 'text' query parameter.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string" }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string" },
+                "message": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get/blackbox": {
+      "get": {
+        "tags": ["AI"],
+        "summary": "Send GET request to Blackbox Endpoint",
+        "description": "This sends a GET request to the Blackbox endpoint.",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "text",
+            "required": true,
+            "type": "string",
+            "description": "The input prompt to send to Blackbox."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "creator": { "type": "string" },
+                "prompt": { "type": "string" },
+                "result": { "type": "string" }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Missing 'text' query parameter.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string" }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string" },
+                "message": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+     "/get/claude": {
+      "get": {
+        "tags": ["AI"],
+        "summary": "Send GET request to Claude Endpoint",
+        "description": "This sends a GET request to the Claude endpoint.",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "text",
+            "required": true,
+            "type": "string",
+            "description": "The input prompt to send to Claude."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "creator": { "type": "string" },
+                "prompt": { "type": "string" },
+                "result": { "type": "string" }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Missing 'text' query parameter.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string" }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string" },
+                "message": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+     "/get/text2image": {
+      "get": {
+        "tags": ["AI"],
+        "summary": "Send GET request to Text2image Endpoint",
+        "description": "This sends a GET request to the Text2image endpoint.",
+        "produces": ["image/png"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "prompt",
+            "required": true,
+            "type": "string",
+            "description": "The input prompt to send to Text2image."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "creator": { "type": "string" },
+                "prompt": { "type": "string" },
+                "result": { "type": "string" }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Missing 'prompt' query parameter.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string" }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string" },
+                "message": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+     "/get/text2imagev2": {
+      "get": {
+        "tags": ["AI"],
+        "summary": "Send GET request to Text2imagev2 Endpoint",
+        "description": "This sends a GET request to the Text2imagev2 endpoint.",
+        "produces": ["image/png"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "prompt",
+            "required": true,
+            "type": "string",
+            "description": "The input prompt to send to Text2imagev2."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "creator": { "type": "string" },
+                "prompt": { "type": "string" },
+                "result": { "type": "string" }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Missing 'prompt' query parameter.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string" }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string" },
+                "message": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/post/openai": {
+      "post": {
+        "tags": ["AI"],
+        "summary": "Send POST to OpenAI Endpoint",
+        "description": "This sends a POST request to the OpenAI endpoint.",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "messages": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "role": { "type": "string" },
+                      "content": { "type": "string" }
+                    }
+                  }
+                },
+                "model": { "type": "string" },
+                "seed": { "type": "integer" },
+                "jsonMode": { "type": "boolean" }
+              },
+              "example": {
+                "messages": [
+                  { "role": "assistant", "content": "Hello! How are you today?" },
+                  { "role": "user", "content": "Hai! Nama saya Fikri." },
+                  { "role": "assistant", "content": "Halo Fikri." },
+                  { "role": "user", "content": "Siapa nama saya?" }
+                ]
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/post/qwen-coder": {
+      "post": {
+        "tags": ["AI"],
+        "summary": "Send POST to Qwen-Coder Endpoint",
+        "description": "This sends a POST request to the Qwen-Coder endpoint.",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "messages": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "role": { "type": "string" },
+                      "content": { "type": "string" }
+                    }
+                  }
+                },
+                "model": { "type": "string" },
+                "seed": { "type": "integer" },
+                "jsonMode": { "type": "boolean" }
+              },
+              "example": {
+                "messages": [
+                  { "role": "assistant", "content": "Hello! How are you today?" },
+                  { "role": "user", "content": "Hai! Nama saya Fikri." },
+                  { "role": "assistant", "content": "Halo Fikri." },
+                  { "role": "user", "content": "Siapa nama saya?" }
+                ]
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/post/mistral": {
+      "post": {
+        "tags": ["AI"],
+        "summary": "Send POST to Mistral Endpoint",
+        "description": "This sends a POST request to the Mistral endpoint.",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "messages": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "role": { "type": "string" },
+                      "content": { "type": "string" }
+                    }
+                  }
+                },
+                "model": { "type": "string" },
+                "seed": { "type": "integer" },
+                "jsonMode": { "type": "boolean" }
+              },
+              "example": {
+                "messages": [
+                  { "role": "assistant", "content": "Hello! How are you today?" },
+                  { "role": "user", "content": "Hai! Nama saya Fikri." },
+                  { "role": "assistant", "content": "Halo Fikri." },
+                  { "role": "user", "content": "Siapa nama saya?" }
+                ]
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/post/rtist": {
+      "post": {
+        "tags": ["AI"],
+        "summary": "Send POST to Rtist Endpoint",
+        "description": "This sends a POST request to the Rtist endpoint.",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "messages": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "role": { "type": "string" },
+                      "content": { "type": "string" }
+                    }
+                  }
+                },
+                "model": { "type": "string" },
+                "seed": { "type": "integer" },
+                "jsonMode": { "type": "boolean" }
+              },
+              "example": {
+                "messages": [
+                  { "role": "assistant", "content": "Hello! How are you today?" },
+                  { "role": "user", "content": "Hai! Nama saya Fikri." },
+                  { "role": "assistant", "content": "Halo Fikri." },
+                  { "role": "user", "content": "Siapa nama saya?" }
+                ]
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/post/midijourney": {
+      "post": {
+        "tags": ["AI"],
+        "summary": "Send POST to Midijourney Endpoint",
+        "description": "This sends a POST request to the Midijourney endpoint.",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "messages": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "role": { "type": "string" },
+                      "content": { "type": "string" }
+                    }
+                  }
+                },
+                "model": { "type": "string" },
+                "seed": { "type": "integer" },
+                "jsonMode": { "type": "boolean" }
+              },
+              "example": {
+                "messages": [
+                  { "role": "assistant", "content": "Hello! How are you today?" },
+                  { "role": "user", "content": "Hai! Nama saya Fikri." },
+                  { "role": "assistant", "content": "Halo Fikri." },
+                  { "role": "user", "content": "Siapa nama saya?" }
+                ]
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/post/llama": {
+      "post": {
+        "tags": ["AI"],
+        "summary": "Send POST to LLaMA Endpoint",
+        "description": "This sends a POST request to the LLaMA endpoint.",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "messages": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "role": { "type": "string" },
+                      "content": { "type": "string" }
+                    }
+                  }
+                },
+                "model": { "type": "string" },
+                "seed": { "type": "integer" },
+                "jsonMode": { "type": "boolean" }
+              },
+              "example": {
+                "messages": [
+                  { "role": "assistant", "content": "Hello! How are you today?" },
+                  { "role": "user", "content": "Hai! Nama saya Fikri." },
+                  { "role": "assistant", "content": "Halo Fikri." },
+                  { "role": "user", "content": "Siapa nama saya?" }
+                ]
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/download/facebook": {
+      "get": {
+        "tags": ["Downloader"],
+        "summary": "Download Facebook Video",
+        "description": "This endpoint allows users to download videos from Facebook by providing the video URL.",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "url",
+            "required": true,
+            "type": "string",
+            "description": "The URL of the Facebook video to download."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Video downloaded successfully",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": { "type": "string", "example": "success" },
+                "video_url": { "type": "string", "example": "https://example.com/video.mp4" }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid or missing URL.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string", "example": "Invalid URL format." }
+              }
+            }
+          },
+          "404": {
+            "description": "Video not found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string", "example": "Video not found on Facebook." }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string" },
+                "message": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/download/tiktok": {
+      "get": {
+        "tags": ["Downloader"],
+        "summary": "Download TikTok Video",
+        "description": "This endpoint allows users to download videos from TikTok by providing the video URL.",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "url",
+            "required": true,
+            "type": "string",
+            "description": "The URL of the TikTok video to download."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Video downloaded successfully",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": { "type": "string", "example": "success" },
+                "video_url": { "type": "string", "example": "https://example.com/video.mp4" }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid or missing URL.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string", "example": "Invalid URL format." }
+              }
+            }
+          },
+          "404": {
+            "description": "Video not found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string", "example": "Video not found on TikTok." }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string" },
+                "message": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/download/instagram": {
+      "get": {
+        "tags": ["Downloader"],
+        "summary": "Download Instagram Video",
+        "description": "This endpoint allows users to download videos from Instagram by providing the video URL.",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "url",
+            "required": true,
+            "type": "string",
+            "description": "The URL of the TikTok video to download."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Video downloaded successfully",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": { "type": "string", "example": "success" },
+                "video_url": { "type": "string", "example": "https://example.com/video.mp4" }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid or missing URL.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string", "example": "Invalid URL format." }
+              }
+            }
+          },
+          "404": {
+            "description": "Video not found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string", "example": "Video not found on Instagram." }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string" },
+                "message": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+        "/download/ytmp4": {
+      "get": {
+        "tags": ["Downloader"],
+        "summary": "Download YouTube MP4 Video",
+        "description": "This endpoint allows users to download videos from YouTube MP4 by providing the video URL.",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "url",
+            "required": true,
+            "type": "string",
+            "description": "The URL of the YouTube video to download."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Video downloaded successfully",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": { "type": "string", "example": "success" },
+                "video_url": { "type": "string", "example": "https://example.com/video.mp4" }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid or missing URL.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string", "example": "Invalid URL format." }
+              }
+            }
+          },
+          "404": {
+            "description": "Video not found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string", "example": "Video not found on YouTube." }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string" },
+                "message": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/download/terabox": {
+      "get": {
+        "tags": ["Downloader"],
+        "summary": "Download Terabox Video",
+        "description": "This endpoint allows users to download videos from Terabox by providing the video URL.",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "url",
+            "required": true,
+            "type": "string",
+            "description": "The URL of the Terabox video to download."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Video downloaded successfully",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": { "type": "string", "example": "success" },
+                "video_url": { "type": "string", "example": "https://example.com/video.mp4" }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid or missing URL.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string", "example": "Invalid URL format." }
+              }
+            }
+          },
+          "404": {
+            "description": "Video not found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string", "example": "Video not found on Terabox." }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string" },
+                "message": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/download/mediafire": {
+      "get": {
+        "tags": ["Downloader"],
+        "summary": "Download Mediafire Files",
+        "description": "This endpoint allows users to download files from Mediafire by providing the video URL.",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "url",
+            "required": true,
+            "type": "string",
+            "description": "The URL of the Mediafire to download."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "File downloaded successfully",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": { "type": "string", "example": "success" },
+                "video_url": { "type": "string", "example": "https://example.com/file.zip" }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid or missing URL.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string", "example": "Invalid URL format." }
+              }
+            }
+          },
+          "404": {
+            "description": "File not found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string", "example": "File not found on Mediafire." }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string" },
+                "message": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/download/gdrive": {
+      "get": {
+        "tags": ["Downloader"],
+        "summary": "Download Google Drive Files",
+        "description": "This endpoint allows users to download files from Google Drive by providing the video URL.",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "url",
+            "required": true,
+            "type": "string",
+            "description": "The URL of the Google Drive to download."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "File downloaded successfully",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": { "type": "string", "example": "success" },
+                "video_url": { "type": "string", "example": "https://example.com/file.zip" }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid or missing URL.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string", "example": "Invalid URL format." }
+              }
+            }
+          },
+          "404": {
+            "description": "File not found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string", "example": "File not found on Google Drive." }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string" },
+                "message": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/download/ytmp3": {
+      "get": {
+        "tags": ["Downloader"],
+        "summary": "Download YouTube MP3",
+        "description": "This endpoint allows users to download MP3 files from YouTube by providing the video URL.",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "url",
+            "required": true,
+            "type": "string",
+            "description": "The URL of the YouTube video to download as MP3."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "MP3 file downloaded successfully",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": { "type": "boolean", "example": true },
+                "creator": { "type": "string", "example": "Fikri" },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "quality": { "type": "string", "example": "128kbps" },
+                      "title": { "type": "string", "example": "Video Title" },
+                      "download_url": { "type": "string", "example": "https://example.com/audio.mp3" }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid or missing URL.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string", "example": "Invalid URL format." }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string" },
+                "message": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search/ytmp4play": {
+      "get": {
+        "tags": ["Search"],
+        "summary": "Search for YouTube MP4 Play",
+        "description": "This endpoint allows users to search for YouTube MP4 play.",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string",
+            "description": "The search query for YouTube MP4 play."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful search response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "results": { "type": "array", "items": { "type": "string" } }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search/ytmp3play": {
+      "get": {
+        "tags": ["Search"],
+        "summary": "Search for YouTube MP3 Play",
+        "description": "This endpoint allows users to search for YouTube MP3 play.",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string",
+            "description": "The search query for YouTube MP3 play."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful search response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "results": { "type": "array", "items": { "type": "string" } }
+              }
+            }
+          }
+        }
+      }
+    },
+     "/search/youtube": {
+      "get": {
+        "tags": ["Search"],
+        "summary": "Search YouTube",
+        "description": "This endpoint allows users to search for videos on YouTube.",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string",
+            "description": "The search query for YouTube."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful search response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "results": { "type": "array", "items": { "type": "string" } }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search/google": {
+      "get": {
+        "tags": ["Search"],
+        "summary": "Search Google",
+        "description": "This endpoint allows users to search on Google.",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string",
+            "description": "The search query for Google."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful search response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "results": { "type": "array", "items": { "type": "string" } }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search/gimage": {
+      "get": {
+        "tags": ["Search"],
+        "summary": "Search Image on Google",
+        "description": "This endpoint allows users to search Image on Google.",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string",
+            "description": "The search query for Google Image."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful search response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "results": { "type": "array", "items": { "type": "string" } }
+              }
+            }
+          }
+        }
+      }
+    },
+     "/search/bing": {
+      "get": {
+        "tags": ["Search"],
+        "summary": "Search on Bing",
+        "description": "This endpoint allows users to search on Bing.",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string",
+            "description": "The search query for Bing Search."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful search response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "results": { "type": "array", "items": { "type": "string" } }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search/bingimg": {
+      "get": {
+        "tags": ["Search"],
+        "summary": "Search Image on Bing",
+        "description": "This endpoint allows users to search Image on Bing.",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string",
+            "description": "The search query for Bing Image Search."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful search response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "results": { "type": "array", "items": { "type": "string" } }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search/pinterest": {
+      "get": {
+        "tags": ["Search"],
+        "summary": "Search Image on Pinterest",
+        "description": "This endpoint allows users to search Image on Pinterest.",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string",
+            "description": "The search query for Pinterest Search."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful search response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "results": { "type": "array", "items": { "type": "string" } }
+              }
+            }
+          }
+        }
+      }
+    },
+     "/search/tiktok": {
+      "get": {
+        "tags": ["Search"],
+        "summary": "Search TikTok",
+        "description": "This endpoint allows users to search for videos on TikTok.",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string",
+            "description": "The search query for TikTok."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful search response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "results": { "type": "array", "items": { "type": "string" } }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tools/tinyurl": {
+      "get": {
+        "tags": ["Tools"],
+        "summary": "Tinyurl",
+        "description": "This endpoint allows users to create tiny url.",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "url",
+            "required": true,
+            "type": "string",
+            "description": "The URL you want to minify."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful create tinyurl",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "results": { "type": "array", "items": { "type": "string" } }
+              }
+            }
+          }
+        }
+      }
+    },
+     "/tools/sswebpc": {
+      "get": {
+        "tags": ["Tools"],
+        "summary": "Send GET request to sswebpc Endpoint",
+        "description": "This sends a GET request to the sswebpc endpoint.",
+        "produces": ["image/jpeg"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "url",
+            "required": true,
+            "type": "string",
+            "description": "The input url to send to sswebpc."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "creator": { "type": "string" },
+                "prompt": { "type": "string" },
+                "result": { "type": "string" }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Missing 'url' query parameter.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string" }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string" },
+                "message": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+     "/tools/sswebhp": {
+      "get": {
+        "tags": ["Tools"],
+        "summary": "Send GET request to sswebhp Endpoint",
+        "description": "This sends a GET request to the sswebhp endpoint.",
+        "produces": ["image/jpeg"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "url",
+            "required": true,
+            "type": "string",
+            "description": "The input url to send to sswebhp."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "creator": { "type": "string" },
+                "prompt": { "type": "string" },
+                "result": { "type": "string" }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Missing 'url' query parameter.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string" }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": { "type": "string" },
+                "message": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
